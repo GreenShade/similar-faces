@@ -1,0 +1,39 @@
+#header {
+    text-align: center;
+}
+
+#canvas {
+    position: absolute;
+    top: 30vh;
+    height: 40vh;
+    width: 40vh;
+}
+
+#foreground {
+    position: absolute;
+    top: 30vh;
+    height: 40vh;
+    width: 40vh;
+}
+
+#member {
+    position: absolute;
+    top: 25vh;
+    right: 5vh;
+    height: 40vh;
+    width: 30vh;
+}
+
+#container {
+    position: relative;
+}
+
+body {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#video {
+    height: 30vh;
+    width: 40vw;
+}

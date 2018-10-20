@@ -1,0 +1,4 @@
+server/model
+server/people
+.idea/
+__pycache__/
