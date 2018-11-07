@@ -1,0 +1,20 @@
+[0;1;32m●[0m docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: [0;1;32mactive (running)[0m since Mon 2018-11-05 21:49:58 CET; 12s ago
+     Docs: https://docs.docker.com
+ Main PID: 18083 (dockerd)
+    Tasks: 28
+   CGroup: /system.slice/docker.service
+           ├─18083 /usr/bin/dockerd -H fd://
+           └─18115 docker-containerd --config /var/run/docker/containerd/containerd.toml
+
+lis 05 21:49:58 rafal-Ubuntu dockerd[18083]: time="2018-11-05T21:49:58.384370148+01:00" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
+lis 05 21:49:58 rafal-Ubuntu dockerd[18083]: time="2018-11-05T21:49:58.384404314+01:00" level=info msg="pickfirstBalancer: HandleSubConnStateChange: 0xc4204d5430, CONNECTING" module=grpc
+lis 05 21:49:58 rafal-Ubuntu dockerd[18083]: time="2018-11-05T21:49:58.384635932+01:00" level=info msg="pickfirstBalancer: HandleSubConnStateChange: 0xc4204d5430, READY" module=grpc
+lis 05 21:49:58 rafal-Ubuntu dockerd[18083]: time="2018-11-05T21:49:58.384733146+01:00" level=info msg="Loading containers: start."
+lis 05 21:49:58 rafal-Ubuntu dockerd[18083]: time="2018-11-05T21:49:58.492101579+01:00" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+lis 05 21:49:58 rafal-Ubuntu dockerd[18083]: time="2018-11-05T21:49:58.567066821+01:00" level=info msg="Loading containers: done."
+lis 05 21:49:58 rafal-Ubuntu dockerd[18083]: time="2018-11-05T21:49:58.631531777+01:00" level=info msg="Docker daemon" commit=e68fc7a graphdriver(s)=overlay2 version=18.06.1-ce
+lis 05 21:49:58 rafal-Ubuntu dockerd[18083]: time="2018-11-05T21:49:58.631603678+01:00" level=info msg="Daemon has completed initialization"
+lis 05 21:49:58 rafal-Ubuntu dockerd[18083]: time="2018-11-05T21:49:58.667544604+01:00" level=info msg="API listen on /var/run/docker.sock"
+lis 05 21:49:58 rafal-Ubuntu systemd[1]: Started Docker Application Container Engine.

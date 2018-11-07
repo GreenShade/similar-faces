@@ -9,6 +9,7 @@ from openface_helper import OpenfaceHelper
 from database import Database
 from file_utils import read_base64_image
 
+
 unknown_face = read_base64_image("unknown.jpg")
 
 print("creating services...")
