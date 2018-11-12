@@ -3,12 +3,14 @@ version: "3.1"
 services:
   db:
     image: postgres:latest
+    container_name: docker_db_1
     environment:
       POSTGRES_DB: faces
       POSTGRES_USER: test
       POSTGRES_PASSWORD: test
     volumes:
       - $PWD/postgres:/docker-entrypoint-initdb.d:ro
+    hostname: docker_db_1
     ports:
       - "5432:5432"
 
@@ -17,10 +19,12 @@ services:
 
   app:
     build: ..
+    container_name: docker_app_1
     ports:
       - "5000:5000"
 
   ui:
     build: ../ui
+    container_name: docker_ui_1
     ports:
       - "3000:3000"
