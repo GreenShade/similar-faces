@@ -4,8 +4,8 @@ from file_utils import *
 from models import Member
 
 members = Database().members_table()
-openface_helper = OpenfaceHelper("server/model")
-image_directory = "server/people"
+openface_helper = OpenfaceHelper("model")
+image_directory = "people"
 
 all = []
 for person in os.listdir(image_directory):
