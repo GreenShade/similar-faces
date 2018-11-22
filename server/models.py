@@ -1,6 +1,11 @@
 import numpy as np
 
 
+class MultiResponse:
+    def __init__(self, detected):
+        self.detected = [elem.__dict__ for elem in detected]
+
+
 class DetectedResponse:
     def __init__(self, base64image, face_positions, name):
         self.positions = face_positions
@@ -23,8 +28,8 @@ class Members:
             self.cache.append(member)
         self.as_matrix = np.array([member.representation for member in self.cache])
 
-    def find(self, representation):
+    def find(self, representation, top):
         all_differences = self.as_matrix - representation
         l2_distances = np.sum(all_differences ** 2, 1)
 
-        return self.cache[np.argmin(l2_distances)]
+        return [self.cache[i] for i in np.argsort(l2_distances)[0:top]]

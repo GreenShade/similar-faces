@@ -7,9 +7,11 @@ export default class Socket extends Component{
     this.socket.on("face", json => {
       const obj = JSON.parse(json);
       this.props.updateComputing(false);
-      this.props.updateRects(obj.positions);
-      this.props.updateMember(obj.face);
-      this.props.updateName(obj.name);
+      this.props.updateRects(obj.detected[0].positions);
+      for (let i = 0; i < obj.detected.length; i++) {
+        this.props.updateMember(obj.detected[i].face, "member" + (i + 1));
+        this.props.updateName(obj.detected[i].name, "member" + (i + 1));
+      }
     });
 
     this.canvas = document.getElementById("canvas");

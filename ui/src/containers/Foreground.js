@@ -3,7 +3,7 @@ import Foreground from "../components/Foreground"
 
 
 const mapStateToProps = state => ({
-  rects: state.faces.faces
+  rects: state.faces.rects
 });
 
 export default connect(

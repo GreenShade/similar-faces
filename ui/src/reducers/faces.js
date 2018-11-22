@@ -1,19 +1,37 @@
-const faces = (state = {faces: [], member: undefined, name: "Not recognized"}, action) => {
+const faces = (state = {
+  rects: [],
+  members: {
+    member1: {face: undefined, name: "Not recognized"},
+    member2: {face: undefined, name: "Not recognized"},
+    member3: {face: undefined, name: "Not recognized"}
+  }}, action) => {
   switch (action.type) {
-    case "NEW_FACES":
+    case "NEW_RECTS":
       return {
-        faces: action.value,
-        member: state.member
+        ...state,
+        rects: action.value,
       };
     case "NEW_FACE":
       return {
-        member: action.value,
-        faces: state.faces
+        ...state,
+        members: {
+          ...state.members,
+          [action.id]: {
+            ...state.members[action.id],
+            face: action.value
+          }
+        }
       };
     case "NEW_NAME":
       return {
         ...state,
-        name: action.value
+        members: {
+          ...state.members,
+          [action.id]: {
+            ...state.members[action.id],
+            name: action.value
+          }
+        }
       };
     default:
       return state;

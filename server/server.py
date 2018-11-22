@@ -9,7 +9,6 @@ from openface_helper import OpenfaceHelper
 from database import Database
 from file_utils import read_base64_image
 import pickle
-import numpy as np
 import time
 
 unknown_face = read_base64_image("unknown.jpg")
@@ -43,7 +42,7 @@ def find_face_positions(image):
     return opencv_helper.all_face_positions(image)
 
 
-def detect_face(image, face_position):
+def detect_faces(image, face_position, top):
     
     time_between_reset = 2
 
@@ -88,7 +87,7 @@ def detect_face(image, face_position):
     #     return members.find(representation).face
     # return members.find(representation).face_base64
 
-    return members.find(avg_image[0])
+    return members.find(avg_image[0], top)
 
 
 @socketio.on("detect")
@@ -100,12 +99,15 @@ def detect_face_io(image):
         face_positions = find_face_positions(image_data)
 
         if len(face_positions) == 1:
-            member = detect_face(image_data, face_positions[0])
-            face = member.face_base64
-            name = member.name
-
-            respond(DetectedResponse(face, face_positions, name))
+            detected_members = detect_faces(image_data, face_positions[0], top=3)
+            respond(MultiResponse([
+                DetectedResponse(detected_members[i].face_base64, face_positions, detected_members[i].name) for i in range(3)
+            ]))
         else:
-            respond(DetectedResponse(unknown_face, face_positions, "Not recognized"))
+            respond(MultiResponse([
+                DetectedResponse(unknown_face, face_positions, "Not recognized") for _ in range(3)
+            ]))
     except EmptyImage:
-        respond(DetectedResponse(unknown_face, [], "Not recognized"))
+        respond(MultiResponse([
+            DetectedResponse(unknown_face, [], "Not recognized") for _ in range(3)
+        ]))

@@ -10,7 +10,9 @@ const App = () => (
     <Header />
     <Video />
     <Foreground />
-    <Member />
+    <Member id="member1" />
+    <Member id="member2" />
+    <Member id="member3" />
     <Socket />
   </div>
 );

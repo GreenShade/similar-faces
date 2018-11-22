@@ -4,29 +4,63 @@
 
 #canvas {
     position: absolute;
-    top: 30vh;
+    top: 10vh;
+    right: 30vh;
     height: 40vh;
     width: 40vh;
 }
 
 #foreground {
     position: absolute;
-    top: 30vh;
+    top: 10vh;
+    right: 30vh;
     height: 40vh;
     width: 40vh;
 }
 
-#member {
+#member1 {
     position: absolute;
-    top: 25vh;
+    top: 50vh;
+    right: 65vh;
+    height: 40vh;
+    width: 30vh;
+}
+
+#member1-description {
+    position: absolute;
+    top: 45vh;
+    right: 65vh;
+    font-size: 18px;
+    font-family: Ubuntu, sans-serif;
+}
+
+#member2 {
+    position: absolute;
+    top: 50vh;
+    right: 35vh;
+    height: 40vh;
+    width: 30vh;
+}
+
+#member2-description {
+    position: absolute;
+    top: 45vh;
+    right: 35vh;
+    font-size: 18px;
+    font-family: Ubuntu, sans-serif;
+}
+
+#member3 {
+    position: absolute;
+    top: 50vh;
     right: 5vh;
     height: 40vh;
     width: 30vh;
 }
 
-#member-description {
+#member3-description {
     position: absolute;
-    top: 20vh;
+    top: 45vh;
     right: 5vh;
     font-size: 18px;
     font-family: Ubuntu, sans-serif;

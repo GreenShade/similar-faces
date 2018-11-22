@@ -14,8 +14,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   updateComputing: (computing) => dispatch(updateComputing(computing)),
   updateRects: (rects) => dispatch(newFaces(rects)),
-  updateMember: (member) => dispatch(newFace(member)),
-  updateName: (member) => dispatch(newName(member))
+  updateMember: (member, id) => dispatch(newFace(member, id)),
+  updateName: (member, id) => dispatch(newName(member, id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Socket);
