@@ -24,6 +24,14 @@
     width: 30vh;
 }
 
+#member-description {
+    position: absolute;
+    top: 20vh;
+    right: 5vh;
+    font-size: 18px;
+    font-family: Ubuntu, sans-serif;
+}
+
 #container {
     position: relative;
 }

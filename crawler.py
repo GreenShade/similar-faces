@@ -17,7 +17,7 @@ with urllib.request.urlopen(uri) as response:
 
     for deputies in deputy_group:
         for deputy in deputies.find_all("li"):
-            name = ''.join(deputy.find_all("div", {"class": "deputyName"})[0].text.split()).lower() + ".jpg"
+            name = '_'.join(deputy.find_all("div", {"class": "deputyName"})[0].text.split()).lower() + ".jpg"
             face_uri = "http://www.sejm.gov.pl/" + deputy.find_all("a")[0]["href"]
 
             with urllib.request.urlopen(get_image(face_uri)) as image_response:

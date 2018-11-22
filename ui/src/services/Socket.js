@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import {Component} from "react";
 import openSocket from "socket.io-client";
 
 export default class Socket extends Component{
@@ -9,6 +9,7 @@ export default class Socket extends Component{
       this.props.updateComputing(false);
       this.props.updateRects(obj.positions);
       this.props.updateMember(obj.face);
+      this.props.updateName(obj.name);
     });
 
     this.canvas = document.getElementById("canvas");

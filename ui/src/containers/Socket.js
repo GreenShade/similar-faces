@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import Socket from "../services/Socket";
-import { updateComputing, newFaces, newFace } from "../actions"
+import { updateComputing, newFaces, newFace, newName } from "../actions"
 
 const mapStateToProps = state => ({
   video: state.video.video,
@@ -14,7 +14,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   updateComputing: (computing) => dispatch(updateComputing(computing)),
   updateRects: (rects) => dispatch(newFaces(rects)),
-  updateMember: (member) => dispatch(newFace(member))
+  updateMember: (member) => dispatch(newFace(member)),
+  updateName: (member) => dispatch(newName(member))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Socket);

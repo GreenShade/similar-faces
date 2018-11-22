@@ -88,7 +88,7 @@ def detect_face(image, face_position):
     #     return members.find(representation).face
     # return members.find(representation).face_base64
 
-    return members.find(avg_image[0]).face_base64
+    return members.find(avg_image[0])
 
 
 @socketio.on("detect")
@@ -100,9 +100,12 @@ def detect_face_io(image):
         face_positions = find_face_positions(image_data)
 
         if len(face_positions) == 1:
-            face = detect_face(image_data, face_positions[0])
-            respond(DetectedResponse(face, face_positions))
+            member = detect_face(image_data, face_positions[0])
+            face = member.face_base64
+            name = member.name
+
+            respond(DetectedResponse(face, face_positions, name))
         else:
-            respond(DetectedResponse(unknown_face, face_positions))
+            respond(DetectedResponse(unknown_face, face_positions, "Not recognized"))
     except EmptyImage:
-        respond(DetectedResponse(unknown_face, []))
+        respond(DetectedResponse(unknown_face, [], "Not recognized"))

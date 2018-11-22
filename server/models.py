@@ -2,9 +2,10 @@ import numpy as np
 
 
 class DetectedResponse:
-    def __init__(self, base64image, face_positions):
+    def __init__(self, base64image, face_positions, name):
         self.positions = face_positions
         self.face = base64image
+        self.name = name
 
 
 class Member:

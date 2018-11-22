@@ -11,8 +11,12 @@ export default class Member extends Component {
 
   render() {
     return (
-      <img ref="img"
-           id="member" />
+      <div>
+        <img ref="img"
+             alt="MP"
+             id="member" />
+        <p id="member-description">{this.props.name}</p>
+      </div>
     );
   }
 }

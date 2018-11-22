@@ -13,6 +13,11 @@ export const newFace = base64Image => ({
   value: "data:image/webp;base64," + base64Image
 });
 
+export const newName = name => ({
+  type: "NEW_NAME",
+  value: name
+});
+
 export const updateVideoDimensions = dims => ({
   type: "VIDEO_DIMENSIONS",
   ...dims
