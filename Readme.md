@@ -4,7 +4,7 @@ This is a simple application that allows you to find out which deputies of Polis
 
 ## Usage
 
-To use our application just go to this [link](https://github.com/GreenShade/similar-faces). THe following page will appear:
+To use our application just go to this [link](https://github.com/GreenShade/similar-faces). You can also use it locally using docker and docker-compose. Run `docker-compose up` from `docker` directory. After starting the following page will appear:
 ![](https://lh3.googleusercontent.com/GxPmJXVw-DhOLwAiNCs19YQFgJ422zzk5-6jxaGLFeiZ7jooVTutXtXUIj9-2xJbSxZIgq2Yt1u-m0eWyyuvCK9UsxphR0mED4zTWXN5Z96K6IgaSCKuDtaK6xhX2zusgLrZOk_48FH8p3S3Uhjp-Z_a4PX4CqpFD8Uef_WrvJG3wbKIZU08BYSOWjyzl8zN2Enmq85Imf3Khu1K91CJTjyU0cZ_TylI-M-4j31SHnivujcMsRClkGswuYRHZJ71zzopBjynTQnQYQY-RwOqWm1MNW_pYB8m-Cc1Ms0bNj9R6SyhnMh6WgEQ7T7iEz7BuKGwZ4hp4aQVHVdwQg_wjNJ0v1udQ4lyOCDBpSQr1kIrZRnRNYYj4nNG2wtQhV-8PTpc4wK6GKQuy_NARtocT6QO3IDhAyG-M5uXzamI6h2UBWshqJnwpHhJf_2Dg_p_QqY5dWde8XupHnUPruMrycQjGw1aJsT-abYcocq0_nRKwIJO3S6k0vTmGTJCfAO7TEjBLx_RN2UpEavnuDdbu8e-QiiKdz7UiaLvurMJNwpl9yuvqGLKDKieaMGmRlUJVdatvV3Qlpwqh-e_2Do09JWwzmVWL9p11qBhXts5f-KJ3ghSh2iJFtiFuV3qh3ht1xL54TeDIR6daGr3IFuOCFtZR-8VV8zV2kWJWcoPb_4hobxjAr3ikkTPURTf6Gs-jPiIcp3kH2d5GoySlLU=w876-h797-no)
 At the top you can see the image captured in real time from your built-in camera. To use it you may have to accept permissions in your browser to use camera.
 When your face will be detected in captured images, the app will show you three the most similar deputies of Polish parliament to you. During capturing the algorithm is learning your face so to get better results try to move your head around to capture it from different angles.
