@@ -10,7 +10,8 @@ At the top you can see the image captured in real time from your built-in camera
 When your face will be detected in captured images, the app will show you three the most similar deputies of Polish parliament to you. During capturing the algorithm is learning your face so to get better results try to move your head around to capture it from different angles.
 If the detection algorithm lososes your face for 2 seconds the learned face will be reset and new face will be learned. 
 
-Example: 
+Example:
+
 ![](https://lh3.googleusercontent.com/8msQTVIhL3NSXCm0ZL-MeY83pt3une0Y341mewvVcSyIpP2rrQciZ2qqSRqMf94YtMTY6GLXJqEC6Z2KG0Jja2r9IyR06Zmm13xOqNk-x8s88DvMuBwMbZR-as-jLxUXu_POTO9NM_aP2Gt0xu0j77LnuPzcxu0wl24KRXLB522U6gYZnwBcwbB_QJnlay8_maPebS9gTVlCY3jvO7yE3PEJhOhAi-Saye500Hc0JUqNjt5NWuorBJHGx4q-5o43MRT3Rb4yiKtYUUYhH7PFeLkAb7O_8lakcg0i11_6UNN_aBq7_-U54WF01wP_YSD-f8zp8o6a333-QoiC7KHqLEZ2RX9udpNv1nQUomsK2HSkv1h7GlLlIDo8xyYVsKuwKILZN2JdQrUF28_438hmX9_fqo0vEYdprO0P96res-ECVTFHRIGoYzrlw4YjPFuY5hWyB81_HSK7yc_QwvCu0kcvUmO_q6xKFcyf1CGTcPKc-quys32iJ688zTBXMaxEEETyQvJoEa21QrMJIutIegfXKOsYto1e-3SwgFjig1_LqamwFTzq-lDoqWpztOh80mEmhP0KuUF9MJ8QWtWPNVfcCEIOZQEoMVi-WOTbDawG40ZIVo_U3K9TjEWxCaR15AjNEaKISiZ_w9Ya_jcH8-avwg=w937-h797-no)
 You can see 3 different people with their names. The bounding box on the image is shown when your face is detected.
 
