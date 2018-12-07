@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3
+FROM continuumio/miniconda3
 
 # files
 ADD /files/environment.yml /files/environment.yml
@@ -11,6 +11,7 @@ RUN conda env create
 WORKDIR /tmp
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive
 WORKDIR /root/torch
+RUN apt-get update
 RUN apt-get install sudo
 RUN bash install-deps
 RUN ./install.sh
