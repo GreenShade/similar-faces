@@ -13,7 +13,7 @@ export default class Video extends Component {
     const self = this;
     video.addEventListener("play", function() {
       const width = 500;
-      const height = 500 / video.videoWidth * video.videoHeight;
+      const height = 500 * 3 / 4;
 
       self.width = width;
       self.height = height;

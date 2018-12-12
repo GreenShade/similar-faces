@@ -4,10 +4,12 @@ import Video from "../containers/Video"
 import Socket from "../containers/Socket"
 import Member from "../containers/Member"
 import Header from "./Header"
+import PCA from "../containers/PCA";
 
 const App = () => (
   <div id="container">
     <Header />
+    <PCA />
     <Video />
     <Foreground />
     <Member id="member1" />

@@ -20,6 +20,13 @@ export const newName = (name, id) => ({
   id: id
 });
 
+export const newProjections = (user, members) => ({
+  type: "NEW_PROJECTIONS",
+  user: user,
+  members: members
+});
+
+
 export const updateVideoDimensions = dims => ({
   type: "VIDEO_DIMENSIONS",
   ...dims

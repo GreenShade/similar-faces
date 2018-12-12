@@ -38,6 +38,10 @@ def respond(result):
     emit("face", json.dumps(result.__dict__))
 
 
+def respond_pca(result):
+    emit("pca", json.dumps(result.__dict__))
+
+
 def find_face_positions(image):
     return opencv_helper.all_face_positions(image)
 
@@ -87,7 +91,7 @@ def detect_faces(image, face_position, top):
     #     return members.find(representation).face
     # return members.find(representation).face_base64
 
-    return members.find(avg_image[0], top)
+    return members.find(avg_image[0], top), members.pca_projections(avg_image[0], top)
 
 
 @socketio.on("detect")
@@ -99,10 +103,11 @@ def detect_face_io(image):
         face_positions = find_face_positions(image_data)
 
         if len(face_positions) == 1:
-            detected_members = detect_faces(image_data, face_positions[0], top=3)
+            detected_members, pca_projections = detect_faces(image_data, face_positions[0], top=30)
             respond(MultiResponse([
                 DetectedResponse(detected_members[i].face_base64, face_positions, detected_members[i].name) for i in range(3)
             ]))
+            respond_pca(Projections(pca_projections[0], pca_projections[1]))
         else:
             respond(MultiResponse([
                 DetectedResponse(unknown_face, face_positions, "Not recognized") for _ in range(3)

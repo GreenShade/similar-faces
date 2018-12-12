@@ -13,6 +13,10 @@ export default class Socket extends Component{
         this.props.updateName(obj.detected[i].name, "member" + (i + 1));
       }
     });
+    this.socket.on("pca", json => {
+      const obj = JSON.parse(json);
+      this.props.updateProjections(obj.user, obj.members);
+    });
 
     this.canvas = document.getElementById("canvas");
     this.context2d = this.canvas.getContext("2d");
