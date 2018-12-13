@@ -15,26 +15,11 @@ const faces = (state = {
         ...state,
         rects: action.value,
       };
-    case "NEW_FACE":
+    case "NEW_MEMBERS":
       return {
         ...state,
         members: {
-          ...state.members,
-          [action.id]: {
-            ...state.members[action.id],
-            face: action.value
-          }
-        }
-      };
-    case "NEW_NAME":
-      return {
-        ...state,
-        members: {
-          ...state.members,
-          [action.id]: {
-            ...state.members[action.id],
-            name: action.value
-          }
+          ...action.value
         }
       };
     case "NEW_PROJECTIONS":

@@ -8,10 +8,12 @@ export default class Socket extends Component{
       const obj = JSON.parse(json);
       this.props.updateComputing(false);
       this.props.updateRects(obj.detected[0].positions);
+
+      const members = {};
       for (let i = 0; i < obj.detected.length; i++) {
-        this.props.updateMember(obj.detected[i].face, "member" + (i + 1));
-        this.props.updateName(obj.detected[i].name, "member" + (i + 1));
+        members["member" + (i + 1)] = {face: obj.detected[i].face, name: obj.detected[i].name};
       }
+      this.props.updateMembers(members);
     });
     this.socket.on("pca", json => {
       const obj = JSON.parse(json);

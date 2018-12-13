@@ -8,16 +8,9 @@ export const newFaces = rects => ({
   value: rects
 });
 
-export const newFace = (base64Image, id) => ({
-  type: "NEW_FACE",
-  value: "data:image/webp;base64," + base64Image,
-  id: id
-});
-
-export const newName = (name, id) => ({
-  type: "NEW_NAME",
-  value: name,
-  id: id
+export const newMembers = members => ({
+  type: "NEW_MEMBERS",
+  value: members
 });
 
 export const newProjections = (user, members) => ({

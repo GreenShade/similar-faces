@@ -10,12 +10,14 @@ export default class PCA extends Component {
 
 
   componentDidMount() {
+    const size = 450;
+
     this.user = this.props.user;
     this.members = this.props.members;
 
     this.margin = {top: 50, right: 50, left: 50, bottom: 50};
-    this.height = 500 - this.margin.top - this.margin.bottom;
-    this.width = 500 - this.margin.left - this.margin.right;
+    this.height = size - this.margin.top - this.margin.bottom;
+    this.width = size - this.margin.left - this.margin.right;
 
     this.createChart([]);
   }

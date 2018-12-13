@@ -8,7 +8,11 @@ export default class Member extends Component {
 
   componentDidUpdate() {
     this.member = this.props.members[this.props.id];
-    this.img.src = this.member.face;
+    this.img.src = "data:image/webp;base64," + this.member.face;
+  }
+
+  getName() {
+    return `#${this.props.idx} ${this.member.name}`
   }
 
   render() {
@@ -17,7 +21,7 @@ export default class Member extends Component {
         <img ref="img"
              alt="MP"
              id={this.props.id} />
-        {this.member && <p id={this.props.id + "-description"}>{this.member.name}</p>}
+        {this.member && <p id={this.props.id + "-description"}>{this.getName()}</p>}
       </div>
     );
   }

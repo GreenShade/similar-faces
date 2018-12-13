@@ -32,7 +32,7 @@ export default class Video extends Component {
 
   render() {
     return (
-      <div>
+      <div id="canvasWrap">
         <video ref="video" width={500} height={500} autoPlay style={{display: "none"}} />
         <canvas id="canvas" ref="canvas" width={500} height={500} />
       </div>

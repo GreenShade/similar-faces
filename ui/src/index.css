@@ -1,77 +1,92 @@
+body {
+    color: rgba(28, 54, 83, 0.6);
+}
+
+#description {
+    position: absolute;
+    left: 50vw;
+    top: 60vh;
+    margin-right: 10vh;
+    text-align: justify;
+}
+
+h1 {
+    height: 8vh;
+}
+
+#content {
+    height: 40vh;
+    background-color: #F3F4F8;
+}
+
 #header {
     text-align: center;
 }
 
-#canvas {
+#canvasWrap {
     position: absolute;
     top: 10vh;
-    right: 30vh;
-    height: 40vh;
-    width: 40vh;
+    left: 10%;
 }
 
 #foreground {
     position: absolute;
     top: 10vh;
-    right: 30vh;
-    width: 40vh;
+    left: 10%;
 }
 
 #member1 {
     position: absolute;
-    top: 50vh;
-    right: 70vh;
-    height: 40vh;
-    width: 30vh;
+    top: 10vh;
+    left: 50vw;
+    width: 23vh;
+    height: 30vh;
+    border: 1px solid;
+}
+
+#member2 {
+    position: absolute;
+    top: 10vh;
+    left: 65vw;
+    width: 23vh;
+    height: 30vh;
+    border: 1px solid;
+}
+
+#member3 {
+    position: absolute;
+    top: 10vh;
+    left: 80vw;
+    width: 23vh;
+    height: 30vh;
     border: 1px solid;
 }
 
 #member1-description {
     position: absolute;
-    top: 45vh;
-    right: 70vh;
-    width: 30vh;
+    top: 42vh;
+    left: 50vw;
+    width: 23vh;
     text-align: center;
     font-size: 18px;
-    font-family: Ubuntu, sans-serif;
-}
-
-#member2 {
-    position: absolute;
-    top: 50vh;
-    right: 35vh;
-    height: 40vh;
-    width: 30vh;
-    border: 1px solid;
 }
 
 #member2-description {
     position: absolute;
-    top: 45vh;
-    right: 35vh;
-    width: 30vh;
+    top: 42vh;
+    left: 65vw;
+    width: 23vh;
     text-align: center;
     font-size: 18px;
-    font-family: Ubuntu, sans-serif;
-}
-
-#member3 {
-    position: absolute;
-    top: 50vh;
-    right: 0vh;
-    height: 40vh;
-    width: 30vh;
-    border: 1px solid;
 }
 
 #member3-description {
     position: absolute;
-    top: 45vh;
-    right: 0vh;
-    width: 30vh;
+    top: 42vh;
+    left: 80vw;
+    width: 23vh;
     text-align: center;
     font-size: 18px;
-    font-family: Ubuntu, sans-serif;
 }
 
 #container {
@@ -85,6 +100,6 @@
 
 #pca {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50vh;
+    left: 10vw;
 }
