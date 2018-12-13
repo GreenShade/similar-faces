@@ -5,4 +5,4 @@ COPY . /ui
 WORKDIR /ui
 
 RUN npm install
-CMD ["npm", "start"]
+CMD ["npm", "prod"]

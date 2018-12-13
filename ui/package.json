@@ -12,7 +12,8 @@
     "socket.io-client": "^2.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_SOCKET=http://localhost:5000 react-scripts start",
+    "prod": "REACT_APP_SOCKET=http://192.168.137.31:5000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

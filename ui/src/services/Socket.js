@@ -3,7 +3,7 @@ import openSocket from "socket.io-client";
 
 export default class Socket extends Component{
   componentDidMount() {
-    this.socket = openSocket("http://localhost:5000");
+    this.socket = openSocket(process.env.REACT_APP_SOCKET);
     this.socket.on("face", json => {
       const obj = JSON.parse(json);
       this.props.updateComputing(false);
