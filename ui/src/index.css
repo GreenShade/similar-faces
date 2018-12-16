@@ -2,11 +2,17 @@ body {
     color: rgba(28, 54, 83, 0.6);
 }
 
+.janusze-font-style {
+    font-size: large;
+    fill: rgba(28, 54, 83, 0.6);
+}
+
 #description {
     position: absolute;
     left: 50vw;
-    top: 60vh;
+    top: 55vh;
     margin-right: 10vh;
+    font-size: large;
     text-align: justify;
 }
 

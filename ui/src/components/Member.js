@@ -8,7 +8,6 @@ export default class Member extends Component {
 
   componentDidUpdate() {
     this.member = this.props.members[this.props.id];
-    this.img.src = "data:image/webp;base64," + this.member.face;
   }
 
   getName() {
@@ -16,6 +15,9 @@ export default class Member extends Component {
   }
 
   render() {
+    if (this.member)
+      this.img.src = "data:image/webp;base64," + this.member.face;
+
     return (
       <div>
         <img ref="img"

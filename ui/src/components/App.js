@@ -4,6 +4,7 @@ import Video from "../containers/Video"
 import Socket from "../containers/Socket"
 import Member from "../containers/Member"
 import Header from "./Header"
+import Authors from "./Authors"
 import PCA from "../containers/PCA";
 
 const App = () => (
@@ -37,6 +38,7 @@ const App = () => (
         </p>
       </div>
     </div>
+    <Authors />
     <Socket />
   </div>
 );

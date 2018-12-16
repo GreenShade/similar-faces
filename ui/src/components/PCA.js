@@ -33,8 +33,9 @@ export default class PCA extends Component {
     this.svg.append("text")
       .text("Principal component projection of embeddings")
       .attr("x", this.margin.left + (this.width / 2))
-      .attr("y", this.margin.top)
-      .attr("text-anchor", "middle");
+      .attr("y", this.margin.top / 2)
+      .attr("text-anchor", "middle")
+      .attr("class", "janusze-font-style");
 
     console.log(dataCircles);
     this.svg.selectAll("circle")
