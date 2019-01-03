@@ -26,3 +26,18 @@ The web app uses Node.js and React as front-end framework. The front-end web pag
 ### Server
 
 Server uses python and Flask framework to create API which communicates with front-end. It also uses OpenFace package to detect face and find the most similar face. Every image is embedded in 128-dimensional space and then the three nearest neighbors are found with euclidean distance. To find the embedding of face OpenFace uses pre-trainded Deep neural network model [nn4.v1](https://storage.cmusatyalab.org/openface-models/nn4.v1.t7). When face is continuously detected it is averaged, because predictions for single frame are really unstable. After 2 seconds with no face detected the embedding of face is reset and averaging starts from scratch. 
+
+### Experiment
+
+We wanted to know which member of Polish parliament is the most average. To find out we have downloaded the dataset [Labeled Faces in the Wild](http://vis-www.cs.umass.edu/lfw/?fbclid=IwAR2SAel2odDZiDP5U6cpwObCgDPg-eZ6eg1pPjt8QQQ2EBG41kMgXR5XMis#download) which contains more than 13000 images of faces collected from the web. After that we preprocessed all of the images, found the faces on them and emedded in 128-dimensional space. Then we calculated average distance between every mamber of parliament and all of faces found in images. The three most average faces are shown below and their names are respectively Piotr Zgorzelski, Tomasz Zieliński, Józef Brynkus.
+
+![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/top3.png)
+
+The PCA projection of all deputies is shown below. The red dots are top 3 the most average deputies.
+
+![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/pca.png)
+
+We can see that the choosen deputies are in the middle of dataset. Also we can see two clusters of points. After investigating that we know that one cluster are men (the bigger one) and the other are women.
+
+The project was made on [research workshops classes](https://github.com/pbiecek/WarsztatyBadawcze2018).
+

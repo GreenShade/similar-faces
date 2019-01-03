@@ -71,6 +71,7 @@ dependencies:
   - python-socketio=2.0.0=py36_0
   - readline=6.2=2
   - scipy=1.1.0=py36hfa4b5c9_1
+  - scikit-learn
   - setuptools=40.4.3=py36_0
   - six=1.11.0=py36_1
   - sqlite=3.13.0=0

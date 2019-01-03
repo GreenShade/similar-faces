@@ -1,4 +1,4 @@
-FROM docker_env
+FROM rafaello08/wb_env
 
 # files
 ADD /server /server
