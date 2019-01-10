@@ -42,7 +42,7 @@ Server uses python and Flask framework to create API which communicates with fro
 
 ## Experiment
 
-We wanted to know which member of Polish parliament is the most average. To find out we have downloaded the dataset [Labeled Faces in the Wild](http://vis-www.cs.umass.edu/lfw/?fbclid=IwAR2SAel2odDZiDP5U6cpwObCgDPg-eZ6eg1pPjt8QQQ2EBG41kMgXR5XMis#download) which contains more than 13000 images of faces collected from the web. After that we preprocessed all of the images, found the faces on them and emedded in 128-dimensional space. Then we calculated average distance between every mamber of parliament and all of faces found in images. The three most average faces are shown below and their names are respectively Piotr Zgorzelski, Tomasz Zieliński, Józef Brynkus.
+We wanted to know if people vote for people who are similar to themselves. To find out we conducted the experiment. We have downloaded the dataset [Labeled Faces in the Wild](http://vis-www.cs.umass.edu/lfw/?fbclid=IwAR2SAel2odDZiDP5U6cpwObCgDPg-eZ6eg1pPjt8QQQ2EBG41kMgXR5XMis#download) which contains more than 13000 images of faces collected from the web. After that we preprocessed all of the images, found the faces on them and emedded in 128-dimensional space. Then we poerformed t-SNE transoformation to receive 2-dimensional space. That space was clustered into 3 groups. In every one we found the closest member of parlament to the centroid. We assumed that 3 people are on average the most similar to the whole population. Their names are respectively X, Y, Z. 
 
 ![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/top3.png)
 
