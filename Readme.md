@@ -46,7 +46,7 @@ We wanted to know if people vote for people who are similar to themselves. To fi
 
 ![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/top3.png)
 
-The t_sne projection of all deputies is shown below. The red dots are top 3 the most average deputies.
+The t-SNE projection of all deputies is shown below. The red points are the most average deputies in each cluster.
 
 ![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/tsne.png)
 
