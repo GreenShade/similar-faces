@@ -35,7 +35,7 @@ We wanted to know which member of Polish parliament is the most average. To find
 
 The PCA projection of all deputies is shown below. The red dots are top 3 the most average deputies.
 
-![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/pca.png)
+![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/tsne.png)
 
 We can see that the choosen deputies are in the middle of dataset. Also we can see two clusters of points. After investigating that we know that one cluster are men (the bigger one) and the other are women.
 
