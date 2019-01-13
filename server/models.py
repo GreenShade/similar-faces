@@ -38,6 +38,9 @@ class Members:
         self.pca = PCA(n_components=2)
         self.pca.fit(self.as_matrix)
 
+    def __len__(self):
+        return len(self.cache)
+
     def find(self, representation, top):
         all_differences = self.as_matrix - representation
         l2_distances = np.sum(all_differences ** 2, 1)

@@ -34,7 +34,8 @@ const App = () => (
         <p>
           These vectors tend to be high dimensional thus it is not trivial to show the embedding itself.
           There are multiple techniques of dimensionality reduction though. On the left you can see a plot that uses PCA which
-          projects vectors to a smaller space maximizing variance.
+          projects vectors to a smaller space maximizing variance. The red dot indicates position of your face in this space whereas blue dots show three MPs closest to you.
+          All other MPs are represented as green dots.
         </p>
       </div>
     </div>

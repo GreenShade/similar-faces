@@ -103,7 +103,7 @@ def detect_face_io(image):
         face_positions = find_face_positions(image_data)
 
         if len(face_positions) == 1:
-            detected_members, pca_projections = detect_faces(image_data, face_positions[0], top=30)
+            detected_members, pca_projections = detect_faces(image_data, face_positions[0], top=len(members))
             respond(MultiResponse([
                 DetectedResponse(detected_members[i].face_base64, face_positions, detected_members[i].name) for i in range(3)
             ]))

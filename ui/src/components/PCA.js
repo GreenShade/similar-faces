@@ -63,15 +63,18 @@ export default class PCA extends Component {
     this.members = this.props.members;
 
     const dataCircles = [
-      {x: this.user[0], y: this.user[1], r: 5, color: "red"}
+      {x: this.user[0], y: this.user[1], r: 5, color: "red", index: 100}
     ];
 
     for (let i = 0; i < this.members.length; i++) {
       const color = (i < 3) ? "blue" : "green";
-      dataCircles.push({x: this.members[i][0], y: this.members[i][1], r: 5, color: color})
+      const index = (i < 3) ? 10 : 1;
+      const radius = (i < 3) ? 5 : 3;
+
+      dataCircles.push({x: this.members[i][0], y: this.members[i][1], r: radius, color: color, index: index})
     }
 
-    this.createChart(dataCircles);
+    this.createChart(dataCircles.sort((x, y) => x.index - y.index));
   }
 
   render() {
