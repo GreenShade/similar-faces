@@ -46,6 +46,7 @@ We wanted to know if people vote for people who are similar to themselves. To fi
 * Robert Tyszkiewicz - 19 453 votes
 * Anna Sobecka - 6990 votes
 * Tadeusz Woźniak - 11 011 votes
+
  On 2015 Polish parliamentary about 15 200 000 election votes were cast so the average score should be about 33 000 of votes. As we can see all three choosen MPs got lower number of votes. After conducting the experiment we can conclude that there is no connection between phisical similarity and voting for somebody.
 
 ![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/top3.png)
