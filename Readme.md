@@ -18,15 +18,15 @@ Table of contents
 ## Usage
 
 To use our application just go to this URL:
- [http://13.95.133.4:3000](http://13.95.133.4:3000) 
+ [http://13.95.133.4:3000](http://13.95.133.4:3000).
  Unfortunately, because of security settings it will work properly only in Mozilla Firefox and Microsoft Edge  browsers. You can also use it locally using docker and docker-compose. Run `docker-compose up` from `docker` directory. After starting the following page will appear:
-![<img src="http://13.95.133.4:3000">](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample1.png)
+![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample1.png)
 At the top you can see the image captured in real-time from your built-in camera. To use it you may have to accept permissions in your browser to use camera.
 When your face will be detected in captured images, the app will show you three the most similar deputies of Polish parliament to you. During capturing the algorithm is learning your face so to get better results try to move your head around to capture it from different angles.
 If the detection algorithm looses your face for 2 seconds the learned face will be reset and new face will be learned. 
 
 Example:
-![<img src="http://13.95.133.4:3000">](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample2.png)
+![(http://13.95.133.4:3000)](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample2.png)
 
 You can see 3 different people with their names. The bounding box on the image is shown when your face is detected. The red dot on the plot is your face embedded in 2 dimensional space, while blue dots are three most similar members of Polish Parliament.
 
