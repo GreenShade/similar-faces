@@ -8,6 +8,7 @@ Table of contents
 <!--ts-->
    * [Usage](#usage)
    * [Architecture](#architecture)
+      * [Technology stack](#technology-stack)
       * [UI](#ui)
       * [Local files](#local-files)
       * [Server](#server)
@@ -35,6 +36,11 @@ You can see 3 different people with their names. The bounding box on the image i
 The architecture consists of back-end written in Python and front-end written in JavaScript. It looks as follows:
 ![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/arch.png)
 
+### Technology stack
+
+* python
+* JavaScript
+
 ### UI
 The web app uses Node.js and React as front-end framework. The front-end web page uses your built-in camera to capture frames and localize your face on the image which is sent to Flask back-end API. The back-end responses with localized face, images of 3 the most similar deputies and the data to plot two first principal components of the embedding space, so you can see the position of your face in the 128-dimensional space of other faces. This plot is created using D3 framework.
 
@@ -59,5 +65,5 @@ The t-SNE projection of all deputies is shown below. The red points are the most
 
 We can see that the choosen deputies are in the middle of dataset. Also we can see two clusters of points. After investigating that we know that one cluster are men (crosses) and the other are women.
 
-The project was made on [research workshops classes](https://github.com/pbiecek/WarsztatyBadawcze2018).
+The project was made on [research workshops classes](https://github.com/pbiecek/WarsztatyBadawcze2018) at the [Warsaw University of Technology](https://www.pw.edu.pl/) at the [Faculty of Mathematics and Information Science](https://ww2.mini.pw.edu.pl/).
 
