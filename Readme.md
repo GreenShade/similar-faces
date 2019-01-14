@@ -17,14 +17,16 @@ Table of contents
 
 ## Usage
 
-To use our application just go to this [link](http://13.95.133.4:3000). Unfortunately, because of security settings it will work properly only in Mozilla Firefox and Microsoft Edge  browsers. You can also use it locally using docker and docker-compose. Run `docker-compose up` from `docker` directory. After starting the following page will appear:
-![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample1.png)
+To use our application just go to this URL:
+ [http://13.95.133.4:3000](http://13.95.133.4:3000) 
+ Unfortunately, because of security settings it will work properly only in Mozilla Firefox and Microsoft Edge  browsers. You can also use it locally using docker and docker-compose. Run `docker-compose up` from `docker` directory. After starting the following page will appear:
+![<img src="http://13.95.133.4:3000">](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample1.png)
 At the top you can see the image captured in real-time from your built-in camera. To use it you may have to accept permissions in your browser to use camera.
 When your face will be detected in captured images, the app will show you three the most similar deputies of Polish parliament to you. During capturing the algorithm is learning your face so to get better results try to move your head around to capture it from different angles.
 If the detection algorithm looses your face for 2 seconds the learned face will be reset and new face will be learned. 
 
 Example:
-![](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample2.png)
+![<img src="http://13.95.133.4:3000">](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample2.png)
 
 You can see 3 different people with their names. The bounding box on the image is shown when your face is detected. The red dot on the plot is your face embedded in 2 dimensional space, while blue dots are three most similar members of Polish Parliament.
 
@@ -42,9 +44,9 @@ Server uses python and Flask framework to create API which communicates with fro
 
 ## Experiment
 
-We wanted to know if people vote for people who are similar to themselves. To find out we conducted the experiment. We have downloaded the dataset [Labeled Faces in the Wild](http://vis-www.cs.umass.edu/lfw/?fbclid=IwAR2SAel2odDZiDP5U6cpwObCgDPg-eZ6eg1pPjt8QQQ2EBG41kMgXR5XMis#download) which contains more than 13000 images of faces collected from the web. After that we preprocessed all of the images, found the faces on them and emedded in 128-dimensional space. Then we poerformed t-SNE transoformation to receive 2-dimensional space. That space was clustered into 3 groups. In every one we found the closest member of parlament to the centroid. We assumed that 3 people are on average the most similar to the whole population. Their names are respectively Robert Tyszkiewicz, Anna Sobecka and Tadeusz Woźniak. On 2015 Polish parliamentary election they got the foolowing number of votes:
+We wanted to know if people vote for people who are similar to themselves. To find out we conducted the experiment. We have downloaded the dataset [Labeled Faces in the Wild](http://vis-www.cs.umass.edu/lfw/?fbclid=IwAR2SAel2odDZiDP5U6cpwObCgDPg-eZ6eg1pPjt8QQQ2EBG41kMgXR5XMis#download) which contains more than 13000 images of faces collected from the web. After that we preprocessed all of the images, found the faces on them and emedded in 128-dimensional space. Then we poerformed t-SNE transoformation to receive 2-dimensional space. That space was clustered into 3 groups. In every one we found the closest member of parlament to the centroid. We assumed that 3 people are on average the most similar to the whole population. Their names are respectively Robert Tyszkiewicz, Anna Sobecka and Tadeusz Woźniak. On 2015 Polish parliamentary election they got the following number of votes:
 * Robert Tyszkiewicz - 19 453 votes
-* Anna Sobecka - 6990 votes
+* Anna Sobecka - 6 990 votes
 * Tadeusz Woźniak - 11 011 votes
 
  On 2015 Polish parliamentary about 15 200 000 election votes were cast so the average score should be about 33 000 of votes. As we can see all three choosen MPs got lower number of votes. After conducting the experiment we can conclude that there is no connection between phisical similarity and voting for somebody.
