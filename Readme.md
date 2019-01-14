@@ -26,7 +26,7 @@ When your face will be detected in captured images, the app will show you three 
 If the detection algorithm looses your face for 2 seconds the learned face will be reset and new face will be learned. 
 
 Example:
-![(http://13.95.133.4:3000)](https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample2.png)
+![(https://raw.githubusercontent.com/GreenShade/similar-faces/master/images/sample2.png)](http://13.95.133.4:3000)
 
 You can see 3 different people with their names. The bounding box on the image is shown when your face is detected. The red dot on the plot is your face embedded in 2 dimensional space, while blue dots are three most similar members of Polish Parliament.
 
