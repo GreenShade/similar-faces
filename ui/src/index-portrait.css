@@ -1,0 +1,144 @@
+@media only screen and (orientation: portrait) {
+    body {
+        font-size: 36px;
+    }
+
+    .janusze-font-style-large {
+        font-size: 36px;
+    }
+
+    .janusze-font-style-description {
+        font-size: 30px;
+        fill: rgba(28, 54, 83, 0.6);
+    }
+
+    .janusze-font-style {
+        font-size: 30px;
+    }
+
+    #description {
+        position: absolute;
+        left: 5vw;
+        top: 70vh;
+        margin-right: 50vw;
+        font-size: 28px;
+        text-align: justify;
+    }
+
+    #QR {
+        display: block;
+        position: absolute;
+        left: 15vw;
+        top: 90vh;
+    }
+
+    #CaseStudies {
+        display: block;
+        position: absolute;
+        left: 30vw;
+        top: 93.5vh;
+    }
+
+    h1 {
+        height: 35vh;
+        font-size: 96px;
+    }
+
+    #content {
+        height: 32vh;
+        background-color: #F3F4F8;
+    }
+
+    #header {
+        text-align: center;
+    }
+
+    #canvasWrap {
+        position: absolute;
+        top: 10vh;
+        left: 5vw;
+    }
+
+    #foreground {
+        position: absolute;
+        top: 10vh;
+        left: 5vw;
+        width: 1000px;
+        height: 1000px;
+    }
+
+    #member1 {
+        position: absolute;
+        top: 5vh;
+        left: 60vw;
+        width: 20vh;
+        height: 27vh;
+        border: 1px solid;
+    }
+
+    #member2 {
+        position: absolute;
+        top: 37.5vh;
+        left: 60vw;
+        width: 20vh;
+        height: 27vh;
+        border: 1px solid;
+    }
+
+    #member3 {
+        position: absolute;
+        top: 70vh;
+        left: 60vw;
+        width: 20vh;
+        height: 27vh;
+        border: 1px solid;
+    }
+
+    #member1-description {
+        position: absolute;
+        top: 3vh;
+        left: 60vw;
+        width: 20vh;
+        text-align: center;
+    }
+
+    #member2-description {
+        position: absolute;
+        top: 35.5vh;
+        left: 60vw;
+        width: 20vh;
+        text-align: center;
+    }
+
+    #member3-description {
+        position: absolute;
+        top: 68vh;
+        left: 60vw;
+        width: 20vh;
+        text-align: center;
+    }
+
+    #container {
+        position: relative;
+    }
+
+    #video {
+        height: 1000px;
+        width: 1000px;
+    }
+
+    #canvas {
+        height:1000px;
+        width: 1000px;
+    }
+
+    #pca {
+        position: absolute;
+        top: 40vh;
+        left: 5vw;
+    }
+
+    #pca svg {
+        viewBox: 0 0 250 250
+    }
+}

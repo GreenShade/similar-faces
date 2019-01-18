@@ -5,6 +5,7 @@ import { createStore } from "redux";
 import App from "./components/App";
 import rootReducer from "./reducers";
 import "./index.css"
+import "./index-portrait.css"
 
 const store = createStore(rootReducer);
 

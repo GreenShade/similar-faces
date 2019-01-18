@@ -23,7 +23,7 @@ export default class Member extends Component {
         <img ref="img"
              alt="MP"
              id={this.props.id} />
-        {this.member && <p id={this.props.id + "-description"}>{this.getName()}</p>}
+        {this.member && <p id={this.props.id + "-description"} className="janusze-font-style-description">{this.getName()}</p>}
       </div>
     );
   }

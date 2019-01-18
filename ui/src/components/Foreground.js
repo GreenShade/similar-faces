@@ -23,7 +23,7 @@ export default class Background extends Component {
       <canvas ref="canvas"
               id="foreground"
               width={500}
-              height={500}/>
+              height={500} />
     );
   }
 }

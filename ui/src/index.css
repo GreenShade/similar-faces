@@ -7,6 +7,16 @@ body {
     fill: rgba(28, 54, 83, 0.6);
 }
 
+.janusze-font-style-description {
+    font-size: 18px;
+    fill: rgba(28, 54, 83, 0.6);
+}
+
+.janusze-font-style-large {
+    font-size: large;
+    fill: rgba(28, 54, 83, 0.6);
+}
+
 #description {
     position: absolute;
     left: 50vw;
@@ -14,6 +24,14 @@ body {
     margin-right: 10vh;
     font-size: large;
     text-align: justify;
+}
+
+#QR {
+    display: none;
+}
+
+#CaseStudies {
+    display: none;
 }
 
 h1 {
@@ -39,6 +57,12 @@ h1 {
     position: absolute;
     top: 10vh;
     left: 10%;
+    width: 500px;
+    height: 500px;
+}
+
+#svg {
+    width: 1000px;
 }
 
 #member1 {
@@ -74,7 +98,6 @@ h1 {
     left: 50vw;
     width: 23vh;
     text-align: center;
-    font-size: 18px;
 }
 
 #member2-description {
@@ -83,7 +106,6 @@ h1 {
     left: 65vw;
     width: 23vh;
     text-align: center;
-    font-size: 18px;
 }
 
 #member3-description {
@@ -92,7 +114,6 @@ h1 {
     left: 80vw;
     width: 23vh;
     text-align: center;
-    font-size: 18px;
 }
 
 #container {
@@ -100,8 +121,13 @@ h1 {
 }
 
 #video {
-    height: 30vh;
-    width: 40vw;
+    height: 500px;
+    width: 500px;
+}
+
+#canvas {
+    height: 500px;
+    width: 500px;
 }
 
 #pca {

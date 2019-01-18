@@ -10,7 +10,7 @@ export default class PCA extends Component {
 
 
   componentDidMount() {
-    const size = 450;
+    const size = (window.innerWidth < window.innerHeight) ? 900 : 450;
 
     this.user = this.props.user;
     this.members = this.props.members;
@@ -33,11 +33,10 @@ export default class PCA extends Component {
     this.svg.append("text")
       .text("Principal component projection of embeddings")
       .attr("x", this.margin.left + (this.width / 2))
-      .attr("y", this.margin.top / 2)
+      .attr("y", this.margin.top / 4 * 3)
       .attr("text-anchor", "middle")
-      .attr("class", "janusze-font-style");
+      .attr("class", "janusze-font-style-large");
 
-    console.log(dataCircles);
     this.svg.selectAll("circle")
       .data(dataCircles)
       .enter()
@@ -52,10 +51,12 @@ export default class PCA extends Component {
 
     this.svg.append("g").attr("class", "x axis")
       .attr("transform", "translate(" + this.margin.left + ", " + (this.height + this.margin.top) + ")")
-      .call(d3.axisBottom(xScale));
+      .call(d3.axisBottom(xScale))
+      .attr("class", "janusze-font-style");
     this.svg.append("g").attr("class", "y axis")
       .attr("transform", "translate(" + this.margin.left + ", " + this.margin.top + ")")
-      .call(d3.axisLeft(yScale));
+      .call(d3.axisLeft(yScale))
+      .attr("class", "janusze-font-style");
   }
 
   componentDidUpdate() {

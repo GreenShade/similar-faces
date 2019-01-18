@@ -6,6 +6,8 @@ import Member from "../containers/Member"
 import Header from "./Header"
 import Authors from "./Authors"
 import PCA from "../containers/PCA";
+import QR from "./QR";
+import CaseStudies from "./CaseStudies";
 
 const App = () => (
   <div id="container">
@@ -39,6 +41,8 @@ const App = () => (
         </p>
       </div>
     </div>
+    <QR />
+    <CaseStudies />
     <Authors />
     <Socket />
   </div>
