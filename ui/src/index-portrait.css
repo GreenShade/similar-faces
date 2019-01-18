@@ -55,16 +55,18 @@
 
     #canvasWrap {
         position: absolute;
-        top: 10vh;
-        left: 5vw;
+        top: 5vh;
+        left: 0;
     }
 
     #foreground {
         position: absolute;
-        top: 10vh;
-        left: 5vw;
+        top: 5vh;
+        left: 0;
         width: 1000px;
         height: 1000px;
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
     }
 
     #member1 {
@@ -125,11 +127,15 @@
     #video {
         height: 1000px;
         width: 1000px;
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
     }
 
     #canvas {
         height:1000px;
         width: 1000px;
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
     }
 
     #pca {

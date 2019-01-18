@@ -42,8 +42,8 @@ def respond_pca(result):
     emit("pca", json.dumps(result.__dict__))
 
 
-def find_face_positions(image):
-    return opencv_helper.all_face_positions(image)
+def find_face_positions(image, rotate):
+    return opencv_helper.all_face_positions(image, rotate)
 
 
 def detect_faces(image, face_position, top):
@@ -51,17 +51,6 @@ def detect_faces(image, face_position, top):
     time_between_reset = 2
 
     representation = opencv_helper.face_representation(image, face_position)
-
-    # avg_image = [representation, 1.0, 'dupa']
-    # with open("avg_image", 'wb') as file:
-    #     pickle.dump(avg_image, file)
-
-    # with open("avg_image", 'rb') as file:
-    #     avg_image = pickle.load(file)
-
-    # avg_image[1] += 1.0
-    # with open("avg_image", 'wb') as file:
-    #     pickle.dump(avg_image, file)
 
     try:
         with open("avg_image", 'rb') as file:
@@ -82,25 +71,16 @@ def detect_faces(image, face_position, top):
     with open("avg_image_text", 'w') as file:
         file.write(str(avg_image))
 
-    # todo: idea for a hack unless we prevent flickering
-    # closest_user = users.find(representation)
-
-    # if closest_user is not None:
-    #     return closest_user.cached_face
-    # else:
-    #     return members.find(representation).face
-    # return members.find(representation).face_base64
-
     return members.find(avg_image[0], top), members.pca_projections(avg_image[0], top)
 
 
 @socketio.on("detect")
-def detect_face_io(image):
+def detect_face_io(image, rotate):
     try:
         image = validate_base64_image(image)
-        image_data = opencv_helper.read_as_cv_image(image)
+        image_data = opencv_helper.read_as_cv_image(image, rotate)
 
-        face_positions = find_face_positions(image_data)
+        face_positions = find_face_positions(image_data, rotate)
 
         if len(face_positions) == 1:
             detected_members, pca_projections = detect_faces(image_data, face_positions[0], top=len(members))

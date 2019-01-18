@@ -11,15 +11,28 @@ class OpenfaceHelper:
         self.face_net = self.net = openface.TorchNeuralNet(os.path.join(model_dir, "nn4.small2.v1.t7"), self.dim)
         self.align = openface.AlignDlib(os.path.join(model_dir, "shape_predictor_68_face_landmarks.dat"))
 
-    def read_as_cv_image(self, base64image):
+    def read_as_cv_image(self, base64image, rotate):
         path = save_base64_image_as_temporary(base64image)
-        return cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
+        img = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
 
-    def all_face_positions(self, image):
-        return [
-            [box.left(), box.top(), box.width(), box.height()]
-            for box in self.align.getAllFaceBoundingBoxes(image)
-        ]
+        if rotate:
+            rows, cols, _ = img.shape
+            M = cv2.getRotationMatrix2D((cols / 2, rows / 2), -90, 1)
+            img = cv2.warpAffine(img, M, (cols, rows))
+
+        return img
+
+    def all_face_positions(self, image, rotate):
+        if rotate:
+            return [
+                [box.top(), image.shape[1] - box.right(), box.height(), box.width()]
+                for box in self.align.getAllFaceBoundingBoxes(image)
+            ]
+        else:
+            return [
+                [box.left(), box.top(), box.width(), box.height()]
+                for box in self.align.getAllFaceBoundingBoxes(image)
+            ]
 
     def face_representation(self, image, face_position):
         bounding_box = dlib.rectangle(left=face_position[0],

@@ -21,15 +21,13 @@ export default class Socket extends Component{
     });
 
     this.canvas = document.getElementById("canvas");
-    this.context2d = this.canvas.getContext("2d");
   }
 
   componentDidUpdate() {
     if (!this.props.computing && this.props.video) {
       this.props.updateComputing(true);
-      this.context2d.drawImage(this.props.video, 0, 0, this.props.width, this.props.height);
 
-      this.socket.emit("detect", this.canvas.toDataURL("image/webp").substring(22));
+      this.socket.emit("detect", this.canvas.toDataURL("image/webp").substring(22), window.innerWidth < window.innerHeight);
     }
   }
 
