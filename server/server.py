@@ -5,7 +5,7 @@ from flask_socketio import SocketIO, emit
 
 from exceptions import EmptyImage
 from models import *
-from openface_helper import OpenfaceHelper
+from openface_helper import OpenfaceHelper, SyncHttpClient, OpenfaceProxy
 from database import Database
 from file_utils import read_base64_image
 import pickle
@@ -14,7 +14,10 @@ import time
 unknown_face = read_base64_image("unknown.jpg")
 
 print("creating services...")
-opencv_helper = OpenfaceHelper("model")
+http_client = SyncHttpClient("http://docker_openface_1:5001")
+openface_proxy = OpenfaceProxy(http_client)
+openface_helper = OpenfaceHelper()
+
 database = Database()
 members = Members(database.members_table())
 
@@ -43,14 +46,14 @@ def respond_pca(result):
 
 
 def find_face_positions(image, rotate):
-    return opencv_helper.all_face_positions(image, rotate)
+    return openface_proxy.all_face_positions(image, rotate)
 
 
-def detect_faces(image, face_position, top):
+def detect_faces(image, top):
     
     time_between_reset = 2
 
-    representation = opencv_helper.face_representation(image, face_position)
+    representation = openface_proxy.face_representation(image)
 
     try:
         with open("avg_image", 'rb') as file:
@@ -78,12 +81,12 @@ def detect_faces(image, face_position, top):
 def detect_face_io(image, rotate):
     try:
         image = validate_base64_image(image)
-        image_data = opencv_helper.read_as_cv_image(image, rotate)
+        image_data = openface_helper.read_as_cv_image(image, rotate)
 
         face_positions = find_face_positions(image_data, rotate)
 
         if len(face_positions) == 1:
-            detected_members, pca_projections = detect_faces(image_data, face_positions[0], top=len(members))
+            detected_members, pca_projections = detect_faces(image_data, top=len(members))
             respond(MultiResponse([
                 DetectedResponse(detected_members[i].face_base64, face_positions, detected_members[i].name) for i in range(3)
             ]))

@@ -16,18 +16,20 @@ services:
 
   env:
     build: env-image
-    image: rafaello08/wb_env
 
   app:
     build: ..
     container_name: docker_app_1
     ports:
       - "5000:5000"
-    image: rafaello08/wb2018
 
   ui:
     build: ../ui
     container_name: docker_ui_1
     ports:
       - "3000:3000"
-    image: rafaello08/wb_ui
+
+  openface:
+    build: ../openface
+    ports:
+      - "5001:5001"

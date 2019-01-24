@@ -1,16 +1,41 @@
-import openface
-import dlib
 import cv2
+import grequests
+import json
 
 from file_utils import *
 
 
-class OpenfaceHelper:
-    def __init__(self, model_dir):
-        self.dim = 96
-        self.face_net = self.net = openface.TorchNeuralNet(os.path.join(model_dir, "nn4.small2.v1.t7"), self.dim)
-        self.align = openface.AlignDlib(os.path.join(model_dir, "shape_predictor_68_face_landmarks.dat"))
+class SyncHttpClient:
+    def __init__(self, url):
+        self.url = url
 
+    def send_image_for_json(self, relative, image_as_np):
+        _, file_name = tempfile.mkstemp(suffix=".png")
+        cv2.imwrite(file_name, image_as_np)
+        req = grequests.post(self.url + relative, files={"file": open(file_name, "rb")})
+
+        return json.loads(grequests.map([req])[0].text)
+
+
+class OpenfaceProxy:
+    def __init__(self, http):
+        self.http = http
+
+    def all_face_positions(self, image, rotate):
+        boxes = self.http.send_image_for_json("/boxes", image)
+
+        if rotate:
+            return [
+                [box[1], image.shape[1] - (box[0] + box[2]), box[3], box[2]] for box in boxes
+            ]
+        else:
+            return boxes
+
+    def face_representation(self, image):
+        return self.http.send_image_for_json("/features", image)
+
+
+class OpenfaceHelper:
     def read_as_cv_image(self, base64image, rotate):
         path = save_base64_image_as_temporary(base64image)
         img = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
@@ -21,23 +46,3 @@ class OpenfaceHelper:
             img = cv2.warpAffine(img, M, (cols, rows))
 
         return img
-
-    def all_face_positions(self, image, rotate):
-        if rotate:
-            return [
-                [box.top(), image.shape[1] - box.right(), box.height(), box.width()]
-                for box in self.align.getAllFaceBoundingBoxes(image)
-            ]
-        else:
-            return [
-                [box.left(), box.top(), box.width(), box.height()]
-                for box in self.align.getAllFaceBoundingBoxes(image)
-            ]
-
-    def face_representation(self, image, face_position):
-        bounding_box = dlib.rectangle(left=face_position[0],
-                                      top=face_position[1],
-                                      right=face_position[0] + face_position[2],
-                                      bottom=face_position[1] + face_position[3])
-        aligned_image = self.align.align(self.dim, image, bounding_box, landmarkIndices=openface.AlignDlib.OUTER_EYES_AND_NOSE)
-        return self.face_net.forward(aligned_image)

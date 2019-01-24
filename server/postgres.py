@@ -1,10 +1,12 @@
 from database import Database
-from openface_helper import OpenfaceHelper
+from openface_helper import *
 from file_utils import *
 from models import Member
 
 members = Database().members_table()
-openface_helper = OpenfaceHelper("model")
+http_client = SyncHttpClient("http://docker_openface_1:5001")
+openface_proxy = OpenfaceProxy(http_client)
+openface_helper = OpenfaceHelper()
 image_directory = "people"
 
 all = []
@@ -23,10 +25,10 @@ for person in os.listdir(image_directory):
         image_path = os.path.join(image_directory, person)
         base64image = read_base64_image(image_path)
 
-        image = openface_helper.read_as_cv_image(base64image)
-        position = openface_helper.all_face_positions(image)[0]
+        image = openface_helper.read_as_cv_image(base64image, False)
+        position = openface_proxy.all_face_positions(image, False)[0]
 
-        representation = openface_helper.face_representation(image, position)
+        representation = openface_proxy.face_representation(image)
         all.append(Member(to_full_name([fixed_surname(x.capitalize()) for x in person[:-4].split("_")]), representation, base64image))
 
     except Exception as e:

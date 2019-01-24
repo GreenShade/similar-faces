@@ -1,4 +1,4 @@
-server/model
+openface/server/model
 server/people
 .idea/
 __pycache__/

@@ -4,5 +4,7 @@ FROM rafaello08/wb_env
 ADD /server /server
 WORKDIR /server
 
+RUN bash install-deps
+
 # run
 CMD ["/bin/bash", "run.sh"]

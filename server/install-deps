@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source ~/.bashrc
+source activate similar-face
+pip install grequests
